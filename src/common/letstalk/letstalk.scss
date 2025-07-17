@@ -1,0 +1,120 @@
+@import "/src/style/mixin.scss";
+
+.lets-talk-circle-main {
+  position: fixed;
+  bottom: -140px;
+  height: 280px;
+  right: -170px;
+  width: 340px;
+  z-index: 9;
+  transition: opacity 0.6s ease-out;
+  opacity: 1;
+  display: block;
+  transform: scale(0);
+
+  &.lets-talk-circle-visible {
+    animation: bubble 0.5s ease-in-out forwards;
+    .lets-talk-circle {
+      .bubble-text {
+        span {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  &.lets-talk-circle-hidden {
+    animation: reverse-bubble 0.5s ease-in-out forwards;
+    .lets-talk-circle {
+      .bubble-text {
+        span {
+          opacity: 0;
+          transform: translateY(100%);
+        }
+      }
+    }
+  }
+
+  .lets-talk-circle {
+    background-color: var(--green-300);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    padding: 44px 63px;
+    cursor: pointer;
+
+    &:hover {
+      .bubble-icon {
+        transform: rotate(10deg);
+      }
+    }
+
+    .bubble-icon {
+      height: 65px;
+      left: -10px;
+      top: auto;
+      width: 65px;
+      position: absolute;
+      transform: translateZ(0);
+      transform-origin: bottom right;
+    }
+
+    .bubble-text {
+      height: 40px;
+      font-weight: 400;
+      font-size: 42px;
+      font-family: var(--ff-headingnow-extrabold);
+      line-height: 40px;
+      color: var(--black);
+      overflow: hidden;
+      position: relative;
+      text-transform: uppercase;
+
+      span {
+        transition: transform 0.4s ease-in 0.3s, opacity 0.4s ease-out;
+        display: block;
+        opacity: 0;
+        position: relative;
+        transform: translateY(1001%);
+        white-space: nowrap;
+      }
+    }
+  }
+
+  @keyframes bubble {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    90% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes reverse-bubble {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+}

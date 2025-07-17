@@ -1,0 +1,175 @@
+@import "../../style/mixin.scss";
+
+.header-main {
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 15px 40px;
+  z-index: 9;
+
+  .header {
+    padding: 13px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    border-radius: 100px;
+    background-color: var(--black);
+    max-width: 100%;
+    margin: 0 auto;
+    transition: background-color 0.15s ease-in-out, max-width 0.45s ease-in-out;
+
+    &.header-mini {
+      max-width: 1000px;
+      background-color: var(--grey-700);
+    }
+
+    .header-logo {
+      flex: 1;
+
+      a {
+        svg {
+          width: 130px;
+        }
+      }
+    }
+
+    .header-links {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        padding: 0 20px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        &:hover {
+          .header-link-text {
+            color: var(--green-300);
+            text-decoration-color: var(--green-300);
+          }
+        }
+
+        .header-link-text {
+          @include font20;
+          font-family: var(--ff-headingnow-bold);
+          text-transform: uppercase;
+          color: var(--white);
+          text-decoration-line: underline;
+          text-decoration-thickness: 1.5px;
+          text-decoration-color: transparent;
+          transition: 0.3s ease-in-out;
+        }
+
+        .header-link-notification {
+          position: absolute;
+          top: -3px;
+          right: -3px;
+          width: 19px;
+          height: 19px;
+          border-radius: 50%;
+          background: var(--pink-300);
+          font-size: 11px;
+          line-height: 22px;
+          font-family: var(--ff-headingnow-medium);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    .header-right {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .accessibility-button-main {
+        margin-right: 12px;
+        width: 40px;
+        height: 40px;
+        border: 2px solid var(--green-300);
+        border-radius: 50px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          .accessibility-button-ring {
+            inset: -8px;
+            opacity: 1;
+            z-index: 1;
+          }
+        }
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        .accessibility-button-ring {
+          border: 2px solid var(--green-300);
+          border-radius: 100vmax;
+          display: inline-block;
+          inset: 0;
+          opacity: 0;
+          position: absolute;
+          transform: scale(1);
+          transform-origin: center;
+          transition: 0.3s ease-in-out;
+          z-index: -1;
+        }
+      }
+
+      .talk-button-main {
+        padding: 20px 38px 16px;
+        background-color: var(--green-300);
+        border: 2px solid var(--green-300);
+        border-radius: 100vmax;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        white-space: nowrap;
+
+        &:hover {
+          .talk-button-ring {
+            inset: -8px;
+            opacity: 1;
+            z-index: 1;
+          }
+        }
+
+        span {
+          @include font20;
+          font-family: var(--ff-headingnow-bold);
+          text-transform: uppercase;
+          color: var(--black);
+        }
+
+        .talk-button-ring {
+          border: 2px solid var(--green-300);
+          border-radius: 100vmax;
+          display: inline-block;
+          inset: 0;
+          opacity: 0;
+          position: absolute;
+          transform: scale(1);
+          transform-origin: center;
+          transition: 0.3s ease-in-out;
+          z-index: -1;
+        }
+      }
+    }
+  }
+}
