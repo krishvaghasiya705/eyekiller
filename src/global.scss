@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
 }
 
 html,
@@ -52,6 +53,12 @@ p {
   max-width: 948px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.container-xs {
+  max-width: 1695px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .container-sm {

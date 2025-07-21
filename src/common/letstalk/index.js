@@ -7,7 +7,14 @@ export default function Letstalk() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+      const isAtBottom = scrollTop + windowHeight >= docHeight - 1;
+
+      if (isAtBottom) {
+        setIsVisible(false);
+      } else if (scrollTop > 100) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
