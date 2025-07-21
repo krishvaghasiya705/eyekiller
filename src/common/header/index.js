@@ -3,6 +3,8 @@ import "./header.scss";
 import Logo from "../../assets/icon/logo";
 import { NavLink } from "react-router-dom";
 import Accessibilityicon from "../../assets/icon/accessibilityicon";
+import Commonbutton from "../../components/commonbutton";
+import AccessibilityButton from "../../components/AccessibilityButton/AccessibilityButton";
 
 export default function Header() {
   const [isMini, setIsMini] = useState(false);
@@ -47,14 +49,8 @@ export default function Header() {
             </NavLink>
           </div>
           <div className="header-right">
-            <div className="accessibility-button-main">
-              <Accessibilityicon />
-              <span className="accessibility-button-ring"></span>
-            </div>
-            <div className="talk-button-main">
-              <span>Let's Talk</span>
-              <span className="talk-button-ring"></span>
-            </div>
+            <AccessibilityButton AccessibilityIcon={Accessibilityicon} />
+            <Commonbutton CommonbuttonText="Let's Talk" CommonbuttonLinkpath="/" />
           </div>
         </div>
       </header>

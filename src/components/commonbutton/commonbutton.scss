@@ -1,0 +1,80 @@
+@import "../../style/mixin.scss";
+
+.common-button {
+  padding: 20px 38px 16px;
+  background-color: var(--green-300);
+  border: 2px solid var(--green-300);
+  border-radius: 100vmax;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover {
+    .common-button-ring {
+      inset: -8px;
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+
+  .common-button-text {
+    @include font20;
+    font-family: var(--ff-headingnow-bold);
+    text-transform: uppercase;
+    color: var(--black);
+  }
+
+  .common-button-ring {
+    border: 2px solid var(--green-300);
+    border-radius: 100vmax;
+    display: inline-block;
+    inset: 0;
+    opacity: 0;
+    position: absolute;
+    transform: scale(1);
+    transform-origin: center;
+    transition: 0.3s ease-in-out;
+    z-index: -1;
+  }
+}
+
+.common-button-tr-green-outline {
+  background-color: transparent;
+
+  &:hover {
+    border-color: var(--white);
+    .common-button-ring {
+      border-color: var(--white);
+    }
+  }
+
+  .common-button-text {
+    color: var(--white);
+  }
+}
+
+.common-button-big {
+  padding: 11px 33px 11px 16px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+
+  .common-button-text {
+    @include font26;
+    margin-top: 5px;
+  }
+}
+
+.common-button-big-sc {
+  padding: 22px 30px 18px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+
+  .common-button-text {
+    @include font26;
+  }
+}

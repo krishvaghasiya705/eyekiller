@@ -1,0 +1,42 @@
+@import "../../style/mixin.scss";
+
+.accessibility-button-main {
+    margin-right: 12px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--green-300);
+    background-color: transparent;
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  
+    &:hover {
+      .accessibility-button-ring {
+        inset: -8px;
+        opacity: 1;
+        z-index: 1;
+      }
+    }
+  
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .accessibility-button-ring {
+      border: 2px solid var(--green-300);
+      border-radius: 100vmax;
+      display: inline-block;
+      inset: 0;
+      opacity: 0;
+      position: absolute;
+      transform: scale(1);
+      transform-origin: center;
+      transition: 0.3s ease-in-out;
+      z-index: -1;
+    }
+  }

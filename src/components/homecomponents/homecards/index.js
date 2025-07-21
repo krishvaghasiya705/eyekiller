@@ -8,6 +8,8 @@ import homecardboxvideo4 from "../../../assets/video/homecardboxvideo4.mp4";
 import homecardboximg2 from "../../../assets/image/homecardboximg2.jpg";
 import Awwardsicon from "../../../assets/icon/awwardsicon";
 import Smilehearticon from "../../../assets/icon/smilehearticon";
+import Commonbutton from "../../commonbutton";
+import letstalkpeoples from "../../../assets/image/letstalkpeoples.png";
 
 export default function Homecards() {
   return (
@@ -106,7 +108,19 @@ export default function Homecards() {
                   Explore our portfolio and discover what we can achieve for
                   you. Let’s create something extraordinary together.
                 </p>
-                <div className="like-what-buttons-flx-main"></div>
+                <div className="like-what-buttons-flx-main">
+                  <Commonbutton
+                    CommonbuttonLinkpath="/"
+                    Commonbuttonclass="common-button-big"
+                    CommonbuttonText="let's talk"
+                    CommonbuttonImage={letstalkpeoples}
+                  />
+                  <Commonbutton
+                    CommonbuttonLinkpath="/"
+                    Commonbuttonclass="common-button-tr-green-outline common-button-big-sc"
+                    CommonbuttonText="see all work"
+                  />
+                </div>
               </div>
             </div>
           </div>
