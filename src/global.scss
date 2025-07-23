@@ -12,6 +12,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--black);
+  font-family: var(--ff-headingnow-bold);
 }
 
 img {
@@ -42,6 +43,9 @@ p {
   padding: 0;
 }
 
+p {
+  font-family: var(--ff-proxima-nova);
+}
 
 .container {
   max-width: 1600px;
