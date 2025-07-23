@@ -5,6 +5,8 @@ import Dedicated from "../../components/homecomponents/dedicated";
 import Homecards from "../../components/homecomponents/homecards";
 import Seewhy from "../../components/homecomponents/seewhy";
 import Transformsection from "../../components/homecomponents/transformsection";
+import Dedicatedteam from "../../components/homecomponents/dedicatedteam";
+import Homemarqueesection from "../../components/homecomponents/homemarqueesection";
 
 export default function Home() {
   return (
@@ -15,6 +17,8 @@ export default function Home() {
       <Homecards />
       <Seewhy />
       <Transformsection />
+      <Dedicatedteam />
+      <Homemarqueesection />
     </>
   );
 }

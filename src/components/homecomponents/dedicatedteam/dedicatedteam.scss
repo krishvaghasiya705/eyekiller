@@ -1,0 +1,171 @@
+@import "../../../style/mixin.scss";
+
+.dedicated-team-main {
+  padding: 10px 0 200px;
+
+  .dedicated-team-title-main {
+    max-width: 825px;
+    margin: 0 auto 100px auto;
+
+    .dedicated-team-title {
+      position: relative;
+      padding-top: 100px;
+      margin-bottom: 15px;
+
+      .diamond-icon {
+        left: 45px;
+        top: 155px;
+        z-index: 0;
+        position: absolute;
+
+        svg {
+          transition: 0.3s ease-in-out;
+          height: 100px;
+          width: 100px;
+        }
+
+        &:hover {
+          svg {
+            transform: rotate(30deg);
+          }
+        }
+      }
+
+      .eye-icon {
+        right: 75px;
+        top: 210px;
+        position: absolute;
+
+        svg {
+          transition: 0.3s ease-in-out;
+          height: 110px;
+          width: 110px;
+        }
+
+        &:hover {
+          svg {
+            transform: rotate(30deg);
+          }
+        }
+      }
+
+      .title-marquee {
+        left: auto;
+        right: 100px;
+        top: 20px;
+        width: 144px;
+        padding: 9px 4px 5px;
+        transform: rotate(8deg);
+        background-color: var(--pink-300);
+        border-radius: 3px;
+        color: var(--black);
+        font-family: var(--ff-headingnow-medium);
+        position: absolute;
+        text-transform: uppercase;
+
+        &::after {
+          bottom: -10px;
+          content: "";
+          height: 0;
+          position: absolute;
+          right: 10px;
+          width: 0;
+          border-left: 18px solid var(--pink-300);
+          border-top: 20px solid transparent;
+          border-bottom: 20px solid transparent;
+        }
+
+        .year-flx {
+          display: flex;
+          align-items: center;
+          gap: 30px;
+          padding-right: 30px;
+          overflow: hidden;
+
+          span {
+            position: relative;
+            white-space: nowrap;
+            @include font18;
+            font-weight: 400;
+            line-height: 30px;
+            font-family: var(--ff-headingnow-medium);
+            color: var(--black);
+
+            &::before {
+              position: absolute;
+              height: 20px;
+              right: -20px;
+              top: 50%;
+              transform: translateY(-50%);
+              vertical-align: middle;
+              content: "•";
+              color: var(--black);
+              @include font50;
+            }
+          }
+        }
+      }
+
+      h3 {
+        text-align: center;
+        @include font120;
+        color: var(--white);
+        font-family: var(--ff-headingnow-bold);
+        text-transform: uppercase;
+      }
+    }
+
+    p {
+      @include font24;
+      color: var(--grey-300);
+      font-family: var(--ff-proxima-nova);
+      text-align: center;
+      text-wrap: balance;
+    }
+  }
+
+  .dedicated-team-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 120px;
+
+    .dedicated-team-card {
+      padding: 20px 27px;
+      border-right: 1px dashed var(--grey-590);
+      text-align: center;
+
+      &:last-child {
+        border-right: 1px dashed transparent;
+      }
+
+      .reaction-icon {
+        margin: 0 auto 25px auto;
+        max-width: 35px;
+
+        svg {
+          width: 35px;
+          height: 35px;
+        }
+      }
+
+      h4 {
+        @include font26;
+        color: var(--white);
+        font-family: var(--ff-headingnow-medium);
+        margin-bottom: 5px;
+        text-transform: uppercase;
+      }
+
+      p {
+        @include font22;
+        color: var(--grey-300);
+        font-family: var(--ff-proxima-nova);
+      }
+    }
+  }
+
+  .button-center {
+    max-width: 210px;
+    margin: 0 auto;
+  }
+}

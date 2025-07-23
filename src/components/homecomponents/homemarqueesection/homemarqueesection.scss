@@ -1,0 +1,19 @@
+@import "../../../style/mixin.scss";
+
+.home-marquee-section {
+    padding: 10px 0 200px;
+
+    .marquee-line-first {
+        margin-bottom: 20px;
+    }
+
+    .home-marquee-image {
+        margin-right: 20px;
+        width: 552px;
+        height: 421px;
+
+        img {
+            border-radius: 20px;
+        }
+    }
+}
