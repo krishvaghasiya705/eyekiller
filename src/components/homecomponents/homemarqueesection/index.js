@@ -43,7 +43,7 @@ export default function Homemarqueesection() {
             </div>
             <div className="home-marquee-image">
               <img src={marqueelinesecondimage4} alt="marqueelinesecondimage4" />
-            </div>
+            </div> 
           </Marquee>
         </div>
       </div>
