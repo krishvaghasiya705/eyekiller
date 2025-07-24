@@ -1,0 +1,52 @@
+@import "../../../style/mixin.scss";
+
+.trusted-partners {
+  padding: 10px 0 200px;
+
+  .trusted-partners-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .trusted-partners-grid-img {
+      padding: 15px;
+
+      img {
+        border-radius: 40px;
+      }
+    }
+
+    .trusted-partners-grid-right {
+      padding: 15px 4% 15px 15px;
+      max-width: 659px;
+      margin-left: auto;
+
+      h4 {
+        @include font80;
+        color: var(--white);
+        font-family: var(--ff-headingnow-bold);
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+
+      .trusted-partners-grid-right-content {
+        p {
+          margin-bottom: 38px;
+          @include font24;
+          line-height: 37px;
+          color: var(--grey-300);
+          font-family: var(--ff-proxima-nova);
+
+          a {
+            color: var(--green-300);
+            text-decoration-line: underline;
+            text-decoration-thickness: 1px;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

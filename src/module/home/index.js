@@ -7,6 +7,7 @@ import Seewhy from "../../components/homecomponents/seewhy";
 import Transformsection from "../../components/homecomponents/transformsection";
 import Dedicatedteam from "../../components/homecomponents/dedicatedteam";
 import Homemarqueesection from "../../components/homecomponents/homemarqueesection";
+import Trustedpartners from "../../components/homecomponents/trustedpartners";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Transformsection />
       <Dedicatedteam />
       <Homemarqueesection />
+      <Trustedpartners />
     </>
   );
 }

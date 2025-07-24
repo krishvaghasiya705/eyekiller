@@ -53,8 +53,14 @@ p {
   padding: 0 20px;
 }
 
-.container-xl {
+.container-sm {
   max-width: 948px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container-smx {
+  max-width: 1655px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -65,7 +71,7 @@ p {
   padding: 0 15px;
 }
 
-.container-sm {
+.container-m {
   max-width: 1763px;
   margin: 0 auto;
   padding: 0 49px;
@@ -73,6 +79,12 @@ p {
 
 .container-lg {
   max-width: 1759px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container-xl {
+  max-width: 1865px;
   margin: 0 auto;
   padding: 0 20px;
 }

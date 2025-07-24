@@ -11,7 +11,7 @@ export default function Dedicated() {
   return (
     <>
       <div className="dedicated-section-main">
-        <div className="container-xl">
+        <div className="container-sm">
           <div className="dedicated-section">
             <h2>Dedicated to delivering results for top brands</h2>
             <p>

@@ -15,7 +15,7 @@ export default function Homecards() {
   return (
     <>
       <div className="home-cards-main">
-        <div className="container-sm">
+        <div className="container-m">
           <div className="home-cards">
             <div className="home-cards-left">
               <NavLink to={"/"} className="home-card-box-main">
