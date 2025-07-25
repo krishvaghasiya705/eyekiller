@@ -1,11 +1,11 @@
 import React from "react";
 
-export default function Linkedinicon() {
+export default function Linkedinicon({ width, height }) {
   return (
     <svg
-      width="18"
-      height="19"
-      viewBox="0 0 18 19"
+      width={width || "18"}
+      height={height || "19"}
+      viewBox={`0 0 ${width || "18"} ${height || "19"}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"

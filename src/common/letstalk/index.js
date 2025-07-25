@@ -1,9 +1,22 @@
 import React, { useEffect, useState } from "react";
 import "./letstalk.scss";
 import Bubbleicon from "../../assets/icon/bubbleicon";
+import Letstalkmodal from "../../components/letstalkmodal";
 
 export default function Letstalk() {
   const [isVisible, setIsVisible] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [modalOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,11 +37,17 @@ export default function Letstalk() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const mainClass = `lets-talk-circle-main ${isVisible ? "lets-talk-circle-visible" : "lets-talk-circle-hidden"}`;
+  const mainClass = `lets-talk-circle-main ${
+    isVisible && !modalOpen ? "lets-talk-circle-visible" : "lets-talk-circle-hidden"
+  }`;
 
   return (
     <>
-      <div className={mainClass}>
+      <div
+        className={mainClass}
+        onClick={() => setModalOpen(true)}
+        style={{ cursor: "pointer" }}
+      >
         <div className="lets-talk-circle">
           <div className="bubble-icon">
             <Bubbleicon />
@@ -41,6 +60,8 @@ export default function Letstalk() {
           </div>
         </div>
       </div>
+
+      <Letstalkmodal active={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );
 }

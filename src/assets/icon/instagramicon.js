@@ -1,11 +1,11 @@
 import React from "react";
 
-export default function Instagramicon() {
+export default function Instagramicon({ width, height }) {
   return (
     <svg
-      width="19"
-      height="20"
-      viewBox="0 0 19 20"
+      width={width || "19"}
+      height={height || "20"}
+      viewBox={`0 0 ${width || "19"} ${height || "20"}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"

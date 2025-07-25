@@ -1,11 +1,11 @@
 import React from "react";
 
-export default function Twittericon() {
+export default function Twittericon({ width, height }) {
   return (
     <svg
-      width="17"
-      height="18"
-      viewBox="0 0 17 18"
+      width={width || "17"}
+      height={height || "18"}
+      viewBox={`0 0 ${width || "17"} ${height || "18"}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"

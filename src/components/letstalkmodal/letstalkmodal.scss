@@ -1,0 +1,387 @@
+@import "../../style/mixin.scss";
+
+.letstalk-modal-bg {
+  background-color: var(--green-300);
+  border-radius: 50%;
+  bottom: -10px;
+  height: 10px;
+  position: fixed;
+  right: -10px;
+  transform: translate(50%, 50%);
+  transition: width 1s cubic-bezier(0.25, 0.8, 0.5, 1) 0.75s,
+    height 1s cubic-bezier(0.25, 0.8, 0.5, 1) 0.75s;
+  width: 10px;
+  z-index: 9;
+
+  &.letstalk-modal-bg-active {
+    bottom: 0;
+    height: 300vmax;
+    right: 0;
+    width: 300vmax;
+    z-index: 9;
+  }
+}
+
+.letstalk-modal-main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out 0s, visibility 0.3s ease-in-out 1s;
+  visibility: hidden;
+  width: 100vw;
+  height: 100%;
+
+  &.letstalk-modal-main-active {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out 0.3s, visibility 0.3s ease-in-out 0s;
+    visibility: visible;
+  }
+
+  .letstalk-modal {
+    overflow-y: auto;
+    padding-bottom: 60px;
+    width: 100%;
+    height: 100%;
+
+    .letstalk-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 0 0 0;
+
+      .letstalk-modal-logo {
+        width: 130px;
+        height: 33px;
+        cursor: pointer;
+
+        svg {
+          path,
+          rect {
+            fill: var(--black);
+          }
+        }
+      }
+
+      .letstalk-modal-close {
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        position: relative;
+
+        &:hover .closeicon-layer {
+          inset: -5px;
+          opacity: 1;
+        }
+
+        .closeicon-layer {
+          border: 2px solid var(--black);
+          border-radius: 100vmax;
+          display: inline-block;
+          inset: 0;
+          opacity: 0;
+          position: absolute;
+          transform: scale(1);
+          transform-origin: center;
+          transition: opacity 0.3s ease-in-out, top 0.3s ease-in-out,
+            bottom 0.3s ease-in-out, left 0.3s ease-in-out,
+            right 0.3s ease-in-out;
+          z-index: -1;
+        }
+      }
+    }
+
+    .letstalk-modal-body {
+      padding-top: 180px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+
+      .letstalk-modal-body-left {
+        .letstalk-body-left-title {
+          .contact-ticket {
+            background-color: var(--white);
+            border-radius: 5px;
+            color: var(--black);
+            display: inline-block;
+            transform: rotate(-4deg);
+            font-family: var(--ff-headingnow-bold);
+            padding: 7px 10px 4px;
+            position: relative;
+            text-transform: uppercase;
+            top: -40px;
+            @include font24;
+          }
+
+          h1 {
+            @include font160;
+            color: var(--black);
+            font-family: var(--ff-headingnow-bold);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            padding-right: 60px;
+            text-wrap: balance;
+
+            span {
+              height: 100px;
+              margin-left: -10px;
+              margin-top: 0;
+              width: 100px;
+              display: inline-block;
+              vertical-align: top;
+
+              &:hover {
+                svg {
+                  transform: rotate(30deg);
+                }
+              }
+
+              svg {
+                display: block;
+                transform: rotate(15deg);
+                transition: transform 0.3s ease-in-out;
+                width: 100px;
+                height: 100px;
+              }
+            }
+          }
+
+          p {
+            @include font24;
+            color: var(--black);
+            font-family: var(--ff-proxima-nova);
+            max-width: 683px;
+          }
+        }
+
+        .letstalk-body-left-footer {
+          margin-top: 35px;
+
+          .letstalk-body-left-footer-grd {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            .letstalk-body-left-footer-item {
+              padding: 15px;
+
+              h2 {
+                @include font26;
+                line-height: 50px;
+                font-family: var(--ff-headingnow-bold);
+                color: var(--black);
+                text-transform: uppercase;
+              }
+
+              a {
+                @include font22;
+                font-weight: 600;
+                font-family: var(--ff-proxima-nova);
+                color: var(--black);
+                text-decoration-color: var(--black);
+                text-decoration: underline;
+                text-decoration-thickness: 0.5px;
+                text-underline-offset: 2px;
+                transition: all 0.15s ease-in-out;
+
+                &:hover {
+                  text-decoration-color: transparent;
+                }
+              }
+            }
+          }
+
+          .letstalk-body-social-links {
+            padding-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+
+            a {
+              border: 3px solid var(--black);
+              height: 50px;
+              width: 50px;
+              transition: background-color 0.15s ease-in-out;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 50%;
+
+              &:hover {
+                background-color: var(--black);
+
+                svg {
+                  path {
+                    fill: var(--white);
+                  }
+                }
+              }
+
+              svg {
+                path {
+                  fill: var(--black);
+                }
+              }
+            }
+          }
+        }
+      }
+      .letstalk-modal-body-right {
+        padding-top: 35px;
+
+        form {
+          h3 {
+            @include font40;
+            color: var(--black);
+            font-family: var(--ff-headingnow-bold);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+          }
+
+          .form-grd {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 15px;
+
+            .form-grd-items {
+              label {
+                display: block;
+                @include font20;
+                line-height: 31px;
+                color: var(--black);
+                font-family: var(--ff-proxima-nova);
+                margin-bottom: 10px;
+                text-transform: capitalize;
+              }
+
+              input,
+              select {
+                width: 100%;
+                padding: 14px 20px;
+                background-color: var(--white);
+                color: var(--black);
+                font-size: 18px;
+                border: 2px solid var(--grey-600);
+                border-radius: 3px;
+                min-height: 60px;
+                vertical-align: top;
+                appearance: none;
+              }
+
+              select {
+                background-position: right 20px top 50%, 0 0;
+                background-repeat: no-repeat, repeat;
+                background-image: url("../../assets/icon/iconselectarrowblack.svg");
+              }
+            }
+          }
+
+          .form-textare-main {
+            margin-bottom: 43px;
+
+            label {
+              display: block;
+              @include font20;
+              line-height: 31px;
+              color: var(--black);
+              font-family: var(--ff-proxima-nova);
+              margin-bottom: 10px;
+              text-transform: capitalize;
+            }
+
+            textarea {
+              width: 100%;
+              padding: 14px 20px;
+              background-color: var(--white);
+              color: var(--black);
+              font-size: 18px;
+              border: 2px solid var(--grey-600);
+              border-radius: 3px;
+              min-height: 174px;
+              vertical-align: top;
+              appearance: none;
+              resize: none;
+            }
+          }
+
+          .subscribe-line-main {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            input {
+              width: 30px;
+              height: 30px;
+              border-radius: 5px;
+              border: 2px solid var(--grey-600);
+              background-color: var(--white);
+              appearance: none;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+
+            input[type="checkbox"]:checked:before {
+              border-bottom: 3px solid var(--black);
+              border-right: 3px solid var(--black);
+            }
+
+            [type="checkbox"]:checked:before {
+              display: inline-block;
+              height: 13px;
+              position: relative;
+              top: -1px;
+              transform: rotate(45deg);
+              width: 7px;
+              content: "";
+            }
+
+            label {
+              @include font20;
+              font-weight: 400;
+              line-height: 31px;
+              color: var(--black);
+              font-family: var(--ff-proxima-nova);
+            }
+          }
+
+          .send-msg-main {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+
+            .send-msg-button {
+              width: 100%;
+              max-width: 220px;
+            }
+
+            p {
+              @include font16;
+              font-weight: 400;
+              color: var(--black);
+              font-family: var(--ff-proxima-nova);
+
+              a {
+                color: var(--black);
+                font-weight: 700;
+                text-decoration-color: var(--black);
+                text-decoration: underline;
+                text-decoration-thickness: 0.5px;
+                text-underline-offset: 2px;
+                transition: all 0.15s ease-in-out;
+
+                &:hover {
+                  text-decoration-color: transparent;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

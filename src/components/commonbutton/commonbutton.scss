@@ -79,6 +79,31 @@
   }
 }
 
+.common-button-big-three {
+  padding: 18px 20px 12px 15px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+
+  .common-button-text {
+    @include font26;
+  }
+}
+
 .common-button-w-full {
   width: 100%;
+}
+
+.common-button-ring-hide {
+  .common-button-ring {
+    display: none;
+  }
+}
+
+.common-button-black {
+  background-color: var(--black);
+
+  .common-button-text {
+    color: var(--white);
+  }
 }
