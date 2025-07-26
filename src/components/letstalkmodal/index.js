@@ -31,7 +31,7 @@ export default function Letstalkmodal({ active, onClose }) {
         }`}
       ></div>
       {showContent && (
-        <div className={`letstalk-modal-main letstalk-modal-main-active`}>
+        <div className={`letstalk-modal-main ${showContent ? "letstalk-modal-main-active" : ""}`}>
           <div className="letstalk-modal">
             <div className="container-xxl">
               <div className="letstalk-modal-header">

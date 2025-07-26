@@ -5,9 +5,28 @@ import { NavLink } from "react-router-dom";
 import Accessibilityicon from "../../assets/icon/accessibilityicon";
 import Commonbutton from "../../components/commonbutton";
 import AccessibilityButton from "../../components/AccessibilityButton/AccessibilityButton";
+import Accessibilitymodal from "../../components/Accessibilitymodal";
 
 export default function Header() {
   const [isMini, setIsMini] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  // Custom event name for accessibility modal state
+  const ACCESSIBILITY_MODAL_EVENT = "accessibility-modal-state";
+
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.style.overflow = "hidden";
+      window.dispatchEvent(new CustomEvent(ACCESSIBILITY_MODAL_EVENT, { detail: true }));
+    } else {
+      document.body.style.overflow = "";
+      window.dispatchEvent(new CustomEvent(ACCESSIBILITY_MODAL_EVENT, { detail: false }));
+    }
+    return () => {
+      document.body.style.overflow = "";
+      window.dispatchEvent(new CustomEvent(ACCESSIBILITY_MODAL_EVENT, { detail: false }));
+    };
+  }, [modalOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,11 +68,20 @@ export default function Header() {
             </NavLink>
           </div>
           <div className="header-right">
-            <AccessibilityButton AccessibilityIcon={Accessibilityicon} />
-            <Commonbutton CommonbuttonText="Let's Talk" CommonbuttonLinkpath="/" />
+            <div onClick={() => setModalOpen(true)}>
+              <AccessibilityButton AccessibilityIcon={Accessibilityicon} />
+            </div>
+            <Commonbutton
+              CommonbuttonText="Let's Talk"
+              CommonbuttonLinkpath="/"
+            />
           </div>
         </div>
       </header>
+      <Accessibilitymodal
+        active={modalOpen}
+        onClose={() => setModalOpen(false)}
+      />
     </>
   );
 }
